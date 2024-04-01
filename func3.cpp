@@ -1,4 +1,4 @@
-d#include "middle.h"
+#include "middle.h"
 
 bool itc_mirror_num(long long number){
     if(number < 0){
