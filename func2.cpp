@@ -46,6 +46,9 @@ int itc_null_count(long long number){
     if(number < 0){
         number = number * -1;
     }
+    if(number == 0){
+        return 1;
+    }
     int nulcout = 0;
     while(number > 0){
         int k = number % 10;
@@ -56,3 +59,4 @@ int itc_null_count(long long number){
     }
     return nulcout;
 }
+
