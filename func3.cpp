@@ -1,4 +1,4 @@
-#include "middle.h"
+d#include "middle.h"
 
 bool itc_mirror_num(long long number){
     if(number < 0){
@@ -42,7 +42,7 @@ int itc_second_max_num(long long number){
             maxi2 = maxi;
             maxi = k;
         }
-        else if(k > maxi2 && k < maxi){
+        else if(k > maxi2){
             maxi2 = k;
         }
         number /=10;
@@ -54,7 +54,7 @@ int itc_second_simple_max_num(long long number){
     if(itc_len_num(number) == 1){
         return -1;
     }
-    if(number < 0){
+    if(number <= -10){
         number *= -1;
     }
     long long maxi = -1;
@@ -64,7 +64,7 @@ int itc_second_simple_max_num(long long number){
         if(k > maxi){
             maxi2 = maxi;
             maxi = k;
-        }else if(k > maxi2 && k < maxi){
+        }else if(k > maxi2){
             maxi2 = k;
         }
         number /= 10;
@@ -73,5 +73,8 @@ int itc_second_simple_max_num(long long number){
         return -1;
     }
     return maxi2;
+    
+}
+
     
 }
