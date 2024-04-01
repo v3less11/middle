@@ -75,6 +75,3 @@ int itc_second_simple_max_num(long long number){
     return maxi2;
     
 }
-
-    
-}
