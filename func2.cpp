@@ -43,10 +43,13 @@ int itc_rev_num(long long number){
 }
 
 int itc_null_count(long long number){
+    if(number < 0){
+        number = number * -1;
+    }
     int nulcout = 0;
     while(number > 0){
         int k = number % 10;
-        number /=10;
+        number /= 10;
         if(k == 0){
             nulcout++;
         }
