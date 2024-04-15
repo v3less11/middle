@@ -1,18 +1,19 @@
 long long itc_bin_num(long long number){
-    int a = 0;
+    long long a = 0;
     long long res = 0;
-    while(number > 0){
-        a*=10;
-        a += number % 2;
-        number /= 2;
+    long long tmp = number;
+    while(tmp > 0){
+        a += tmp % 2;
+        tmp /= 2;
+        a*= 10;
     }
     while(a > 0){
-        res *=10;
         res += a % 10;
-        a /=10;
+        a /= 10;
+        res *= 10;
     }
+    return res / 10;
     
-    return res;
 }
 
 long long itc_oct_num(long long number){
