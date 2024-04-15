@@ -33,9 +33,12 @@ long long itc_bin_num(long long number){
 long long itc_oct_num(long long number){
     int a = 0;
     long long res = 0;
+    long long r = 0;
     while(number > 0){
+        int k = number % 8;
+        a += k;
+        r++;
         a*=10;
-        a += number % 8;
         number /= 8;
     }
     while(a > 0){
@@ -43,7 +46,15 @@ long long itc_oct_num(long long number){
         res += a % 10;
         a /=10;
     }
+    int w = itc_len_num(res);
+    if(w < r){
+        while(w < r){
+            res *= 10;
+            w = itc_len_num(res);
+        }
+    }
     return res;
+    
 }
 
 int itc_rev_bin_num(long long number){
